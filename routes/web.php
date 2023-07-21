@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::name('posts.')->prefix('posts')->group(function () {
+    Route::get('/', Livewire\Post\Index::class);
 });

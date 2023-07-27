@@ -5,9 +5,11 @@
             <p class="mt-2 text-sm text-gray-700">
                 @lang('A list of all the Posts in your account including their id, title, and content')
         </div>
+        <p>search: '{{ $search }}'</p>
         <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none flex items-center gap-4">
+            {{-- Not working --}}
             <livewire:search wire:model='search' />
-            {{-- <input type="text"  class="h-8 rounded-lg px-5 focus:outline-indigo-500" placeholder="Search Something..."> --}}
+            <input type="text" wire:model.live='search' class="h-8 rounded-lg px-5 focus:outline-indigo-500" placeholder="Search Something...">
 
             <button type="button"
                 class="block rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ">
@@ -61,11 +63,13 @@
                         </tbody>
                     </table>
                 </div>
+                
+                {{ $this->posts->links() }}
             </div>
         </div>
     </section>
 
     <footer>
-        <livewire:post.count :posts="$this->posts" />
+        <livewire:post.count :posts="$this->posts->getCollection()" />
     </footer>
 </div>

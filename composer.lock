@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b86aae986092dd8548c256efde1538b7",
+    "content-hash": "92807f320777f23e9c0deb73370deb17",
     "packages": [
         {
             "name": "brick/math",
@@ -1762,16 +1762,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.0.0-beta.2",
+            "version": "v3.0.0-beta.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "19832b8687d8393b79666e850bfee6b5cc7d3c24"
+                "reference": "b57896e44397d7c5b1c42db64dba4c8382959357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/19832b8687d8393b79666e850bfee6b5cc7d3c24",
-                "reference": "19832b8687d8393b79666e850bfee6b5cc7d3c24",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/b57896e44397d7c5b1c42db64dba4c8382959357",
+                "reference": "b57896e44397d7c5b1c42db64dba4c8382959357",
                 "shasum": ""
             },
             "require": {
@@ -1798,7 +1798,7 @@
                         "Livewire\\LivewireServiceProvider"
                     ],
                     "aliases": {
-                        "Livewire": "Livewire\\LivewireManager"
+                        "Livewire": "Livewire\\Livewire"
                     }
                 }
             },
@@ -1823,9 +1823,15 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.0.0-beta.2"
+                "source": "https://github.com/livewire/livewire/tree/v3.0.0-beta.4"
             },
-            "time": "2023-07-20T22:42:56+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/livewire",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-07-24T21:57:39+00:00"
         },
         {
             "name": "monolog/monolog",

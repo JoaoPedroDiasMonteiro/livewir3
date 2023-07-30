@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92807f320777f23e9c0deb73370deb17",
+    "content-hash": "5739ea4a4bc2510c999320a10e5c2cdd",
     "packages": [
         {
             "name": "brick/math",
@@ -1762,16 +1762,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v3.0.0-beta.4",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "b57896e44397d7c5b1c42db64dba4c8382959357"
+                "reference": "e3a1a5a70aa037276b98e8d69f19ff194240cb89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/b57896e44397d7c5b1c42db64dba4c8382959357",
-                "reference": "b57896e44397d7c5b1c42db64dba4c8382959357",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/e3a1a5a70aa037276b98e8d69f19ff194240cb89",
+                "reference": "e3a1a5a70aa037276b98e8d69f19ff194240cb89",
                 "shasum": ""
             },
             "require": {
@@ -1791,6 +1791,7 @@
                 "phpunit/phpunit": "^9.0",
                 "psy/psysh": "@stable"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1823,7 +1824,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v3.0.0-beta.4"
+                "source": "https://github.com/livewire/livewire/tree/main"
             },
             "funding": [
                 {
@@ -1831,7 +1832,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-24T21:57:39+00:00"
+            "time": "2023-07-29T19:31:09+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -8017,7 +8018,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "livewire/livewire": 10
+        "livewire/livewire": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

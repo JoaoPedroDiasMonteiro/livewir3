@@ -1,0 +1,11 @@
+{
+    "indentSize": 4,
+    "wrapAttributes": "preserve-aligned",
+    "wrapLineLength": 240,
+    "endWithNewLine": true,
+    "noMultipleEmptyLines": false,
+    "useTabs": false,
+    "sortTailwindcssClasses": true,
+    "sortHtmlAttributes": "vuejs",
+    "noPhpSyntaxCheck": false
+}

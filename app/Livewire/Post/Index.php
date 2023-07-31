@@ -7,6 +7,7 @@ use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Contracts\View\View;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Livewire\Attributes\Computed;
+use Livewire\Attributes\Locked;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -21,7 +22,7 @@ class Index extends Component
     #[Rule(rule: 'string|in:title')]
     public ?string $sort = null;
 
-    #[Rule(rule: 'in:title')]
+    #[Locked]
     public ?string $direction = 'asc';
 
     public function updatedSort(?string $value, ?string $oldValue): void

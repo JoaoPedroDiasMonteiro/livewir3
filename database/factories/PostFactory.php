@@ -9,8 +9,8 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->sentence(),
-            'content' => collect($this->faker->paragraphs(4))->join(PHP_EOL),
+            'title' => $this->faker->realTextBetween(10, 20),
+            'content' => $this->faker->realText(),
         ];
     }
 }

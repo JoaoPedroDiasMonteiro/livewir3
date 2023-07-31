@@ -11,11 +11,7 @@
             {{-- Not working --}}
             <livewire:search wire:model='search' />
             <input type="text" wire:model.live='search' class="h-8 rounded-lg px-5 focus:outline-indigo-500" placeholder="Search Something...">
-
-            <button type="button"
-                    class="block rounded-md bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                @lang('Add post')
-            </button>
+            <x-button :label="__('Add post')" />
         </div>
     </header>
 
@@ -54,7 +50,7 @@
                                         {{ $post->title }}
                                     </td>
                                     <td class="truncate whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                                        {{ str($post->content)->words(5)->value() }}
+                                        {{ str($post->content)->limit(100) }}
                                     </td>
                                     <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
                                         <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>

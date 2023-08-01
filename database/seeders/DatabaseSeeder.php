@@ -11,7 +11,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             PostSeeder::class,
-            GameSeeder::class
+            GameSeeder::class,
+            BetSeeder::class,
         ]);
     }
 }

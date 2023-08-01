@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\GameTypes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
@@ -30,6 +31,11 @@ class Game extends Model
     public static function createSeed(): string
     {
         return Str::uuid();
+    }
+
+    public function bets(): HasMany
+    {
+        return $this->hasMany(Bet::class);
     }
 
     /** For some reason we're not able to use use Illuminate\Database\Eloquent\Casts\Attribute; using appends  */

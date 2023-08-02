@@ -23,6 +23,8 @@ class Game extends Model
         'ends_at' => 'datetime',
     ];
 
+    protected $guarded = [];
+
     protected $hidden = [
         'server_seed',
         'result',
@@ -44,7 +46,7 @@ class Game extends Model
         return $this->encryptServerSeed();
     }
 
-    protected function getHasFinishedAttribute(): string
+    protected function getHasBeenFinishedAttribute(): string
     {
         return ! is_null($this->result);
     }

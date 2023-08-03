@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('server_seed');
             $table->string('client_seed');
             $table->string('result')->nullable()->index();
-            $table->timestamp('ends_at');
+            $table->boolean('finished')->default(false)->index();
             $table->softDeletes();
             $table->timestamps();
         });

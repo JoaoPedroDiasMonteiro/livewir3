@@ -15,7 +15,6 @@ class GameFactory extends Factory
             'server_seed' => Game::createSeed(),
             'client_seed' => Game::createSeed(),
             'result' => $this->faker->randomFloat(2, 1, 9),
-            'ends_at' => now(),
         ];
     }
 }

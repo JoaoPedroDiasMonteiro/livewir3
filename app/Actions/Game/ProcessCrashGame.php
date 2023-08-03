@@ -68,7 +68,7 @@ final class ProcessCrashGame
             throw new \Exception('Oops! Wrong game type... Game: ' . $this->game->id);
         }
 
-        if ($this->game->has_been_finished) {
+        if ($this->game->finished) {
             throw new \Exception('Oops! The game is already finished... Game: ' . $this->game->id);
         }
     }

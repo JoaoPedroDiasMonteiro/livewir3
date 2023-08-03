@@ -46,11 +46,6 @@ class Game extends Model
         return $this->encryptServerSeed();
     }
 
-    protected function getHasBeenFinishedAttribute(): string
-    {
-        return ! is_null($this->result);
-    }
-
     private function encryptServerSeed(): string
     {
         return hash('sha256', $this->server_seed);

@@ -13,7 +13,6 @@ final class CreateCrashGame
             'type' => GameTypes::CRASH,
             'server_seed' => Game::createSeed(),
             'client_seed' => Game::createSeed(),
-            'ends_at' => now()->addMinutes(2),
         ]);
     }
 }

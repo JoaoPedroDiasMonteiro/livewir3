@@ -3,9 +3,10 @@
 namespace App\Actions\Game;
 
 use App\Enums\GameTypes;
+use App\Jobs\CreateCrashGameJob;
 use App\Models\Game;
 
-final class ProcessCrashGame
+final class ProcessCrashResultGame
 {
     public function __construct(private Game $game)
     {
@@ -19,6 +20,10 @@ final class ProcessCrashGame
 
         $instance->processGameResult();
 
+        CreateCrashGameJob::dispatch()->delay(now()->addSeconds(Game::CRASH_GAME_INTERVAL));
+
+        // TODO: Process bets for this game.
+
         return $instance->game;
     }
 
@@ -30,6 +35,7 @@ final class ProcessCrashGame
 
         $this->game->update([
             'result' => $point,
+            'finished' => true,
         ]);
     }
 
@@ -65,11 +71,11 @@ final class ProcessCrashGame
     private function ensureIsCrashGame(): void
     {
         if ($this->game->type !== GameTypes::CRASH) {
-            throw new \Exception('Oops! Wrong game type... Game: ' . $this->game->id);
+            throw new \Exception('Oops! Wrong game type... Game: '.$this->game->id);
         }
 
         if ($this->game->finished) {
-            throw new \Exception('Oops! The game is already finished... Game: ' . $this->game->id);
+            throw new \Exception('Oops! The game is already finished... Game: '.$this->game->id);
         }
     }
 }

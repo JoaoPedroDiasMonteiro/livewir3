@@ -14,6 +14,8 @@ class Game extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public const CRASH_GAME_INTERVAL = 5;
+
     protected $appends = [
         'encryptedServerSeed',
     ];
@@ -45,7 +47,7 @@ class Game extends Model
     {
         return $this->encryptServerSeed();
     }
-
+    
     private function encryptServerSeed(): string
     {
         return hash('sha256', $this->server_seed);

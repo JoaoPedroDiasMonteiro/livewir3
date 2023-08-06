@@ -27,19 +27,7 @@
         </div>
     </section>
 
-    {{-- TODO: transform in component --}}
-    <section class="flex items-center text-center gap-4 overflow-hidden">
-        @foreach ($this->lastGamesResults as $result)
-            <div @class([
-                'bg-red-500' => $result < 2,
-                'bg-green-500' => $result >= 2,
-                'inline-block text-white px-2 rounded-lg w-full whitespace-nowrap shadow'
-            ])>
-               {{ number_format($result, 2) }} X
-            </div>
-        @endforeach
-    </section>
-
+    <livewire:games.crash.last-results wire:key="last-results-{{ $this->game->id }}" />
 
     <section class="h-20 rounded-lg bg-slate-50 shadow">
         Bets component

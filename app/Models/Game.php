@@ -9,6 +9,38 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
+/**
+ * App\Models\Game
+ *
+ * @property int $id
+ * @property GameTypes $type
+ * @property string $server_seed
+ * @property string $client_seed
+ * @property string|null $result
+ * @property int $finished
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Bet> $bets
+ * @property-read int|null $bets_count
+ * @method static \Database\Factories\GameFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Game newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Game newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Game onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Game query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereClientSeed($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereFinished($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereResult($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereServerSeed($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Game withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Game withoutTrashed()
+ * @mixin \Eloquent
+ */
 class Game extends Model
 {
     use HasFactory;

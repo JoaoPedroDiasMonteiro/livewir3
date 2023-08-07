@@ -13,9 +13,8 @@ class BetFactory extends Factory
         return [
             'game_id' => Game::query()->exists() ? Game::query()->inRandomOrder()->first() : Game::factory()->create(),
             'user_id' => User::query()->exists() ? User::query()->inRandomOrder()->first() : User::factory()->create(),
-            'value' => $this->faker->randomFloat(2, 1, 9),
-            'amount' => $this->faker->randomFloat(2, 10, 1000),
-            'seed' => null,
+            'predicted_result' => $this->faker->randomFloat(2, 1, 9),
+            'bet_amount' => $this->faker->randomFloat(2, 10, 1000),
         ];
     }
 }

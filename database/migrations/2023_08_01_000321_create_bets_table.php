@@ -14,9 +14,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Game::class)->index()->constrained();
             $table->foreignIdFor(User::class)->index()->constrained();
-            $table->string('value')->index();
-            $table->float('amount', 12, 4)->index();
-            $table->string('seed')->nullable();
+            $table->string('predicted_result')->index();
+            $table->float('bet_amount', 12, 4)->index();
             $table->timestamps();
             $table->softDeletes();
         });

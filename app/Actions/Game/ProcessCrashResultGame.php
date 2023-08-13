@@ -53,7 +53,7 @@ final class ProcessCrashResultGame
 
         $point = floor((100 * $e - $h) / ($e - $h)) / 100;
 
-        return number_format($point, 2);
+        return number_format($point, 2, '.', '');
     }
 
     private function shouldInstaCrash(string $hash, int $mod): bool

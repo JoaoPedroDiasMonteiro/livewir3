@@ -10,7 +10,7 @@
     @vite('resources/js/app.js')
 </head>
 
-<body class="h-full">
+<body class="h-full relative">
     <div>
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
         <div class="relative z-50 lg:hidden" role="dialog" aria-modal="true">
@@ -279,6 +279,8 @@
             <footer class="mt-auto">footer</footer>
         </main>
     </div>
+
+    <x-notification />
 </body>
 
 </html>

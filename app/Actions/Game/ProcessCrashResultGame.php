@@ -20,9 +20,10 @@ final class ProcessCrashResultGame
 
         $instance->processGameResult();
 
-        CreateCrashGameJob::dispatch()->delay(now()->addSeconds(Game::CRASH_GAME_INTERVAL));
+        // TODO: Maybe we need to create a job to execute this action.
+        ProcessCrashGameBets::execute($game);
 
-        // TODO: Process bets for this game.
+        CreateCrashGameJob::dispatch()->delay(now()->addSeconds(Game::CRASH_GAME_INTERVAL));
 
         return $instance->game;
     }

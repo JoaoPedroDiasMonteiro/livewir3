@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Games\Crash;
 
+use App\Actions\Game\BetOnGame;
 use App\Enums\GameTypes;
-use App\Models\Bet;
 use App\Models\Game;
+use App\Traits\Livewire\WithNotification;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Rule;
@@ -12,6 +13,8 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    use WithNotification;
+
     #[Rule('required|numeric|min:1|max:100000')]
     public $amount = '0.00';
 
@@ -26,16 +29,15 @@ class Index extends Component
 
         $this->validate();
 
-        Bet::create([
-            'user_id' => auth()->user()->id,
-            'game_id' => $this->game->id,
-            'predicted_result' => $this->predict,
-            'bet_amount' => $this->amount,
-        ]);
+        try {
+            BetOnGame::execute($this->game, $this->predict, $this->amount);
+        } catch (\Throwable) {
+            $this->notify('Oops! Something went wrong.')->error()->fire();
 
-        $this->reset('predict', 'amount');
+            return;
+        }
 
-        /** TODO: Notification */
+        $this->notify('Bet placed successfully.')->success()->fire();
     }
 
     #[Computed] // TODO: Add cache

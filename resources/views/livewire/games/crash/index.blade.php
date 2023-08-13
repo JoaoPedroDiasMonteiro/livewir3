@@ -5,6 +5,8 @@
         <p>Game: <span class="text-gray-500">#{{ $this->game->id }}</span></p>
         <p>Server seed: <span class="text-gray-500">{{ $this->game->encrypted_server_seed }}</span></p>
         <p>Client seed: <span class="text-gray-500">{{ $this->game->client_seed }}</span></p>
+
+        <p>Wallet Balance: {{ user()->balance }}</p>
     </header>
 
     <section class="flex rounded-lg shadow overflow-hidden">
@@ -23,7 +25,7 @@
                 @error('predict') <span class="text-xs text-red-500">{{ $message }}</span> @enderror
             </label>
 
-            <x-button :disabled="$this->game->finished" type="submit" label="Save" />
+            <x-button :disabled="$this->game->finished" type="submit" label="Bet" />
         </form>
 
         {{-- TODO: transform in component --}}

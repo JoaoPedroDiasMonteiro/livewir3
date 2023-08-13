@@ -64,10 +64,18 @@ class Bet extends Model
         );
     }
 
+    // TODO: create a new attribute BetAmountFormatted and remove this and the rawBetAmount
     public function betAmount(): Attribute
     {
         return Attribute::make(
             get: fn (float $value) => number_format($value, 2)
+        );
+    }
+
+    public function rawBetAmount(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->attributes['bet_amount']
         );
     }
 }

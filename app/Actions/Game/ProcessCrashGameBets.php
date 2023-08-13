@@ -39,6 +39,7 @@ final class ProcessCrashGameBets
             try {
                 static::processWonBet($user, $bet);
             } catch (\Throwable $th) {
+                // TODO: Notification
                 logger()->critical('Something was wrong with payment', [
                     'user' => $user->toArray(),
                     'bet' => $bet->toArray(),
@@ -51,9 +52,9 @@ final class ProcessCrashGameBets
 
     private function processWonBet(User $user, Bet $bet): void
     {
-        $predict = $bet->predicted_result;
+        $predict = floatval($bet->predicted_result);
 
-        $amount = $bet->bet_amount * $predict;
+        $amount = $bet->raw_bet_amount * $predict;
 
         $user->addBalance($amount);
     }

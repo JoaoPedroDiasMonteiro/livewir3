@@ -23,6 +23,7 @@ use Illuminate\Support\Str;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Bet> $bets
  * @property-read int|null $bets_count
+ *
  * @method static \Database\Factories\GameFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Game newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Game newQuery()
@@ -39,6 +40,7 @@ use Illuminate\Support\Str;
  * @method static \Illuminate\Database\Eloquent\Builder|Game whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Game withTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|Game withoutTrashed()
+ *
  * @mixin \Eloquent
  */
 class Game extends Model
@@ -79,7 +81,7 @@ class Game extends Model
     {
         return $this->encryptServerSeed();
     }
-    
+
     private function encryptServerSeed(): string
     {
         return hash('sha256', $this->server_seed);

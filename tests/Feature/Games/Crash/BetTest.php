@@ -9,7 +9,6 @@ use App\Enums\GameTypes;
 use App\Models\Game;
 use App\Models\User;
 use Exception;
-use Illuminate\Support\Facades\Log;
 use Queue;
 use Tests\TestCase;
 

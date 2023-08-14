@@ -14,7 +14,7 @@ class ProcessCrashResultGameJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public function __construct(private Game $game)
+    public function __construct(public Game $game)
     {
     }
 

@@ -37,7 +37,7 @@ final class ProcessCrashGameBets
             $user = $bet->user;
 
             try {
-                static::processWonBet($user, $bet);
+                $this->processWonBet($user, $bet);
             } catch (\Throwable $th) {
                 // TODO: Notification
                 logger()->critical('Something was wrong with payment', [

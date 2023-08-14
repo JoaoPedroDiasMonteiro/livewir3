@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 final class BetOnGame
 {
-    public static function execute(Game $game, string $predict, float $amount): Bet
+    public static function execute(Game $game, string $predict, float $amount, ?User $user = null): Bet
     {
-        $user = user();
+        $user ??= user();
 
         self::ensureGameHasNotFinished($game);
 
